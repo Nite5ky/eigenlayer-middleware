@@ -127,7 +127,7 @@ abstract contract ServiceManagerBase is ServiceManagerBaseStorage {
     function createAVSPerformanceRewardsSubmission(
         IRewardsCoordinator.PerformanceRewardsSubmission[]
             calldata performanceRewardsSubmissions
-    ) external virtual onlyRewardsInitiator {
+    ) public virtual onlyRewardsInitiator {
         for (uint256 i = 0; i < performanceRewardsSubmissions.length; ++i) {
             // Calculate total amount of token to transfer
             uint256 totalAmount = 0;
@@ -161,6 +161,17 @@ abstract contract ServiceManagerBase is ServiceManagerBaseStorage {
             address(this),
             performanceRewardsSubmissions
         );
+    }
+
+    /**
+     * @notice Forwards a call to Eigenlayer's RewardsCoordinator contract to set the address of the entity that can call `processClaim` on behalf of this contract.
+     * @param claimer The address of the entity that can call `processClaim` on behalf of the earner
+     * @dev Only callabe by the permissioned rewardsInitiator address
+     */
+    function setClaimerFor(
+        address claimer
+    ) public virtual onlyRewardsInitiator {
+        _rewardsCoordinator.setClaimerFor(claimer);
     }
 
     /**
