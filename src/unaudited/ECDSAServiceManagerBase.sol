@@ -106,6 +106,21 @@ abstract contract ECDSAServiceManagerBase is
         _createAVSRewardsSubmission(rewardsSubmissions);
     }
 
+    /// @inheritdoc IServiceManager
+    function createAVSPerformanceRewardsSubmission(
+        IRewardsCoordinator.PerformanceRewardsSubmission[]
+            calldata performanceRewardsSubmissions
+    ) external virtual onlyRewardsInitiator {
+        _createAVSPerformanceRewardsSubmission(performanceRewardsSubmissions);
+    }
+
+    /// @inheritdoc IServiceManager
+    function setClaimerFor(
+        address claimer
+    ) public virtual onlyRewardsInitiator {
+        IRewardsCoordinator(rewardsCoordinator).setClaimerFor(claimer);
+    }
+
     /// @inheritdoc IServiceManagerUI
     function registerOperatorToAVS(
         address operator,
@@ -201,6 +216,51 @@ abstract contract ECDSAServiceManagerBase is
         IRewardsCoordinator(rewardsCoordinator).createAVSRewardsSubmission(
             rewardsSubmissions
         );
+    }
+
+    /**
+     * @notice Creates a new performance-based rewards submission, to be split amongst the operators and
+     * set of stakers delegated to operators who are registered to this `avs`.
+     * @param performanceRewardsSubmissions The performance rewards submissions being created.
+     */
+    function _createAVSPerformanceRewardsSubmission(
+        IRewardsCoordinator.PerformanceRewardsSubmission[]
+            calldata performanceRewardsSubmissions
+    ) internal virtual {
+        for (uint256 i = 0; i < performanceRewardsSubmissions.length; ++i) {
+            // Calculate total amount of token to transfer
+            uint256 totalAmount = 0;
+            for (
+                uint256 j = 0;
+                j < performanceRewardsSubmissions[i].operatorRewards.length;
+                ++j
+            ) {
+                totalAmount += performanceRewardsSubmissions[i]
+                    .operatorRewards[j]
+                    .amount;
+            }
+
+            // Transfer token to ServiceManager and approve RewardsCoordinator to transfer again
+            // in createAVSPerformanceRewardsSubmission() call
+            performanceRewardsSubmissions[i].token.transferFrom(
+                msg.sender,
+                address(this),
+                totalAmount
+            );
+            uint256 allowance = performanceRewardsSubmissions[i]
+                .token
+                .allowance(address(this), rewardsCoordinator);
+            performanceRewardsSubmissions[i].token.approve(
+                rewardsCoordinator,
+                totalAmount + allowance
+            );
+        }
+
+        IRewardsCoordinator(rewardsCoordinator)
+            .createAVSPerformanceRewardsSubmission(
+                address(this),
+                performanceRewardsSubmissions
+            );
     }
 
     /**

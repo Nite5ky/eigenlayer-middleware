@@ -114,7 +114,8 @@ abstract contract ServiceManagerBase is ServiceManagerBaseStorage {
     }
 
     /**
-     * @notice Creates a new performance-based rewards submission, to be split amongst the operators and set of stakers delegated to operators who are registered to this `avs`.
+     * @notice Creates a new performance-based rewards submission, to be split amongst the operators and
+     * set of stakers delegated to operators who are registered to this `avs`.
      * @param performanceRewardsSubmissions The performance rewards submissions being created.
      * @dev Only callabe by the permissioned rewardsInitiator address
      * @dev The duration of the `rewardsSubmission` cannot exceed `MAX_REWARDS_DURATION`
