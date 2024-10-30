@@ -167,11 +167,9 @@ abstract contract ServiceManagerBase is ServiceManagerBaseStorage {
     /**
      * @notice Forwards a call to Eigenlayer's RewardsCoordinator contract to set the address of the entity that can call `processClaim` on behalf of this contract.
      * @param claimer The address of the entity that can call `processClaim` on behalf of the earner
-     * @dev Only callabe by the permissioned rewardsInitiator address
+     * @dev Only callabe by the owner.
      */
-    function setClaimerFor(
-        address claimer
-    ) public virtual onlyRewardsInitiator {
+    function setClaimerFor(address claimer) public virtual onlyOwner {
         _rewardsCoordinator.setClaimerFor(claimer);
     }
 

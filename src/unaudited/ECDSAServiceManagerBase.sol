@@ -115,10 +115,8 @@ abstract contract ECDSAServiceManagerBase is
     }
 
     /// @inheritdoc IServiceManager
-    function setClaimerFor(
-        address claimer
-    ) public virtual onlyRewardsInitiator {
-        IRewardsCoordinator(rewardsCoordinator).setClaimerFor(claimer);
+    function setClaimerFor(address claimer) external virtual onlyOwner {
+        _setClaimerFor(claimer);
     }
 
     /// @inheritdoc IServiceManagerUI
@@ -261,6 +259,14 @@ abstract contract ECDSAServiceManagerBase is
                 address(this),
                 performanceRewardsSubmissions
             );
+    }
+
+    /**
+     * @notice Forwards a call to Eigenlayer's RewardsCoordinator contract to set the address of the entity that can call `processClaim` on behalf of this contract.
+     * @param claimer The address of the entity that can call `processClaim` on behalf of the earner.
+     */
+    function _setClaimerFor(address claimer) internal virtual {
+        IRewardsCoordinator(rewardsCoordinator).setClaimerFor(claimer);
     }
 
     /**
