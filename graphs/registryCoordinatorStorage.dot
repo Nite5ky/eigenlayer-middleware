@@ -1,0 +1,330 @@
+digraph G {
+  graph [ ratio = "auto", page = "100", compound =true, bgcolor = "#2e3e56" ];
+  node [ style = "filled", fillcolor = "#edad56", color = "#edad56", penwidth =3 ];
+  edge [ color = "#fcfcfc", penwidth =2, fontname = "helvetica Neue Ultra Light" ];
+subgraph "clusterRegistryCoordinator" {
+  graph [ label = "RegistryCoordinator", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "RegistryCoordinator.onlyEjector" [ label = "onlyEjector", color = "#1bc6a6", shape =doubleoctagon ];
+  "RegistryCoordinator.quorumExists" [ label = "quorumExists", color = "#1bc6a6", shape =doubleoctagon ];
+  "RegistryCoordinator.<Constructor>" [ label = "<Constructor>", color = "#FF9797", fillcolor = "#FF9797" ];
+  "RegistryCoordinator.initialize" [ label = "initialize", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.registerOperator" [ label = "registerOperator", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.registerOperatorWithChurn" [ label = "registerOperatorWithChurn", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.deregisterOperator" [ label = "deregisterOperator", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.updateOperators" [ label = "updateOperators", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.updateOperatorsForQuorum" [ label = "updateOperatorsForQuorum", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.updateSocket" [ label = "updateSocket", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.ejectOperator" [ label = "ejectOperator", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.createQuorum" [ label = "createQuorum", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.setOperatorSetParams" [ label = "setOperatorSetParams", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.setChurnApprover" [ label = "setChurnApprover", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.setEjector" [ label = "setEjector", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator._registerOperator" [ label = "_registerOperator" ];
+  "RegistryCoordinator._getOrCreateOperatorId" [ label = "_getOrCreateOperatorId" ];
+  "RegistryCoordinator._validateChurn" [ label = "_validateChurn" ];
+  "RegistryCoordinator._deregisterOperator" [ label = "_deregisterOperator" ];
+  "RegistryCoordinator._updateOperator" [ label = "_updateOperator" ];
+  "RegistryCoordinator._individualKickThreshold" [ label = "_individualKickThreshold" ];
+  "RegistryCoordinator._totalKickThreshold" [ label = "_totalKickThreshold" ];
+  "RegistryCoordinator._verifyChurnApproverSignature" [ label = "_verifyChurnApproverSignature" ];
+  "RegistryCoordinator._createQuorum" [ label = "_createQuorum" ];
+  "RegistryCoordinator._updateOperatorBitmap" [ label = "_updateOperatorBitmap" ];
+  "RegistryCoordinator._currentOperatorBitmap" [ label = "_currentOperatorBitmap" ];
+  "RegistryCoordinator._getQuorumBitmapIndexAtBlockNumber" [ label = "_getQuorumBitmapIndexAtBlockNumber" ];
+  "RegistryCoordinator._setOperatorSetParams" [ label = "_setOperatorSetParams" ];
+  "RegistryCoordinator._setChurnApprover" [ label = "_setChurnApprover" ];
+  "RegistryCoordinator._setEjector" [ label = "_setEjector" ];
+  "RegistryCoordinator.getOperatorSetParams" [ label = "getOperatorSetParams", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.getOperator" [ label = "getOperator", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.getOperatorId" [ label = "getOperatorId", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.getOperatorFromId" [ label = "getOperatorFromId", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.getOperatorStatus" [ label = "getOperatorStatus", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.getQuorumBitmapIndicesAtBlockNumber" [ label = "getQuorumBitmapIndicesAtBlockNumber", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.getQuorumBitmapAtBlockNumberByIndex" [ label = "getQuorumBitmapAtBlockNumberByIndex", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.getQuorumBitmapUpdateByIndex" [ label = "getQuorumBitmapUpdateByIndex", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.getCurrentQuorumBitmap" [ label = "getCurrentQuorumBitmap", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.getQuorumBitmapHistoryLength" [ label = "getQuorumBitmapHistoryLength", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.numRegistries" [ label = "numRegistries", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "RegistryCoordinator.calculateOperatorChurnApprovalDigestHash" [ label = "calculateOperatorChurnApprovalDigestHash" ];
+  "RegistryCoordinator.pubkeyRegistrationMessageHash" [ label = "pubkeyRegistrationMessageHash" ];
+  "RegistryCoordinator.owner" [ label = "owner", color = "#FF9797", fillcolor = "#FF9797" ];
+  "RegistryCoordinator._disableInitializers" [ label = "_disableInitializers" ];
+  "RegistryCoordinator._transferOwnership" [ label = "_transferOwnership" ];
+  "RegistryCoordinator._initializePauser" [ label = "_initializePauser" ];
+  "RegistryCoordinator.QuorumBlockNumberUpdated" [ label = "QuorumBlockNumberUpdated" ];
+  "RegistryCoordinator.OperatorSocketUpdate" [ label = "OperatorSocketUpdate" ];
+  "RegistryCoordinator.OperatorInfo" [ label = "OperatorInfo" ];
+  "RegistryCoordinator.OperatorRegistered" [ label = "OperatorRegistered" ];
+  "RegistryCoordinator.OperatorDeregistered" [ label = "OperatorDeregistered" ];
+  "RegistryCoordinator.QuorumBitmapUpdate" [ label = "QuorumBitmapUpdate" ];
+  "RegistryCoordinator.OperatorSetParamsUpdated" [ label = "OperatorSetParamsUpdated" ];
+  "RegistryCoordinator.ChurnApproverUpdated" [ label = "ChurnApproverUpdated" ];
+  "RegistryCoordinator.EjectorUpdated" [ label = "EjectorUpdated" ];
+  "RegistryCoordinator._hashTypedDataV4" [ label = "_hashTypedDataV4" ];
+}
+
+subgraph "clusterBitmapUtils" {
+  graph [ label = "BitmapUtils", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "BitmapUtils.bitmapToBytesArray" [ label = "bitmapToBytesArray" ];
+  "BitmapUtils.orderedBytesArrayToBitmap" [ label = "orderedBytesArrayToBitmap" ];
+  "BitmapUtils.isSet" [ label = "isSet" ];
+}
+
+subgraph "clusterindexRegistry" {
+  graph [ label = "indexRegistry", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "indexRegistry.totalOperatorsForQuorum" [ label = "totalOperatorsForQuorum" ];
+  "indexRegistry.registerOperator" [ label = "registerOperator" ];
+  "indexRegistry.deregisterOperator" [ label = "deregisterOperator" ];
+  "indexRegistry.initializeQuorum" [ label = "initializeQuorum" ];
+}
+
+subgraph "clusterquorumsToAdd" {
+  graph [ label = "quorumsToAdd", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "quorumsToAdd.isEmpty" [ label = "isEmpty" ];
+  "quorumsToAdd.noBitsInCommon" [ label = "noBitsInCommon" ];
+}
+
+subgraph "clustercurrentBitmap" {
+  graph [ label = "currentBitmap", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "currentBitmap.plus" [ label = "plus" ];
+  "currentBitmap.minus" [ label = "minus" ];
+}
+
+subgraph "clusterserviceManager" {
+  graph [ label = "serviceManager", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "serviceManager.registerOperatorToAVS" [ label = "registerOperatorToAVS" ];
+  "serviceManager.deregisterOperatorFromAVS" [ label = "deregisterOperatorFromAVS" ];
+}
+
+subgraph "clusterblsApkRegistry" {
+  graph [ label = "blsApkRegistry", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "blsApkRegistry.registerOperator" [ label = "registerOperator" ];
+  "blsApkRegistry.getOperatorId" [ label = "getOperatorId" ];
+  "blsApkRegistry.registerBLSPublicKey" [ label = "registerBLSPublicKey" ];
+  "blsApkRegistry.deregisterOperator" [ label = "deregisterOperator" ];
+  "blsApkRegistry.initializeQuorum" [ label = "initializeQuorum" ];
+  "blsApkRegistry.getOperatorFromPubkeyHash" [ label = "getOperatorFromPubkeyHash" ];
+}
+
+subgraph "clusterstakeRegistry" {
+  graph [ label = "stakeRegistry", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "stakeRegistry.registerOperator" [ label = "registerOperator" ];
+  "stakeRegistry.getCurrentStake" [ label = "getCurrentStake" ];
+  "stakeRegistry.deregisterOperator" [ label = "deregisterOperator" ];
+  "stakeRegistry.updateOperatorStake" [ label = "updateOperatorStake" ];
+  "stakeRegistry.initializeQuorum" [ label = "initializeQuorum" ];
+}
+
+subgraph "clusterquorumsToRemove" {
+  graph [ label = "quorumsToRemove", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "quorumsToRemove.isEmpty" [ label = "isEmpty" ];
+  "quorumsToRemove.isSubsetOf" [ label = "isSubsetOf" ];
+}
+
+subgraph "clusternewBitmap" {
+  graph [ label = "newBitmap", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "newBitmap.isEmpty" [ label = "isEmpty" ];
+}
+
+subgraph "clusterEIP1271SignatureUtils" {
+  graph [ label = "EIP1271SignatureUtils", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "EIP1271SignatureUtils.checkSignature_EIP1271" [ label = "checkSignature_EIP1271" ];
+}
+
+subgraph "clusterBN254" {
+  graph [ label = "BN254", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "BN254.hashToG1" [ label = "hashToG1" ];
+}
+
+subgraph "clusterOwnableUpgradeable" {
+  graph [ label = "OwnableUpgradeable", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "OwnableUpgradeable.owner" [ label = "owner" ];
+}
+
+  "RegistryCoordinator.<Constructor>";
+  "RegistryCoordinator._disableInitializers";
+  "RegistryCoordinator.initialize";
+  "RegistryCoordinator._transferOwnership";
+  "RegistryCoordinator._initializePauser";
+  "RegistryCoordinator._setChurnApprover";
+  "RegistryCoordinator._setEjector";
+  "RegistryCoordinator._createQuorum";
+  "RegistryCoordinator.registerOperator";
+  "RegistryCoordinator._getOrCreateOperatorId";
+  "RegistryCoordinator._registerOperator";
+  "RegistryCoordinator.registerOperatorWithChurn";
+  "RegistryCoordinator._verifyChurnApproverSignature";
+  "RegistryCoordinator._validateChurn";
+  "RegistryCoordinator._deregisterOperator";
+  "RegistryCoordinator.deregisterOperator";
+  "RegistryCoordinator.updateOperators";
+  "RegistryCoordinator._currentOperatorBitmap";
+  "BitmapUtils.bitmapToBytesArray";
+  "RegistryCoordinator._updateOperator";
+  "RegistryCoordinator.updateOperatorsForQuorum";
+  "BitmapUtils.orderedBytesArrayToBitmap";
+  "indexRegistry.totalOperatorsForQuorum";
+  "BitmapUtils.isSet";
+  "RegistryCoordinator.QuorumBlockNumberUpdated";
+  "RegistryCoordinator.updateSocket";
+  "RegistryCoordinator.OperatorSocketUpdate";
+  "RegistryCoordinator.ejectOperator";
+  "RegistryCoordinator.createQuorum";
+  "RegistryCoordinator.setOperatorSetParams";
+  "RegistryCoordinator._setOperatorSetParams";
+  "RegistryCoordinator.setChurnApprover";
+  "RegistryCoordinator.setEjector";
+  "quorumsToAdd.isEmpty";
+  "quorumsToAdd.noBitsInCommon";
+  "currentBitmap.plus";
+  "RegistryCoordinator._updateOperatorBitmap";
+  "RegistryCoordinator.OperatorInfo";
+  "serviceManager.registerOperatorToAVS";
+  "RegistryCoordinator.OperatorRegistered";
+  "blsApkRegistry.registerOperator";
+  "stakeRegistry.registerOperator";
+  "indexRegistry.registerOperator";
+  "blsApkRegistry.getOperatorId";
+  "blsApkRegistry.registerBLSPublicKey";
+  "RegistryCoordinator.pubkeyRegistrationMessageHash";
+  "stakeRegistry.getCurrentStake";
+  "RegistryCoordinator._individualKickThreshold";
+  "RegistryCoordinator._totalKickThreshold";
+  "quorumsToRemove.isEmpty";
+  "quorumsToRemove.isSubsetOf";
+  "currentBitmap.minus";
+  "newBitmap.isEmpty";
+  "serviceManager.deregisterOperatorFromAVS";
+  "RegistryCoordinator.OperatorDeregistered";
+  "blsApkRegistry.deregisterOperator";
+  "stakeRegistry.deregisterOperator";
+  "indexRegistry.deregisterOperator";
+  "stakeRegistry.updateOperatorStake";
+  "EIP1271SignatureUtils.checkSignature_EIP1271";
+  "RegistryCoordinator.calculateOperatorChurnApprovalDigestHash";
+  "stakeRegistry.initializeQuorum";
+  "indexRegistry.initializeQuorum";
+  "blsApkRegistry.initializeQuorum";
+  "RegistryCoordinator.QuorumBitmapUpdate";
+  "RegistryCoordinator.OperatorSetParamsUpdated";
+  "RegistryCoordinator.ChurnApproverUpdated";
+  "RegistryCoordinator.EjectorUpdated";
+  "RegistryCoordinator.getOperatorFromId";
+  "blsApkRegistry.getOperatorFromPubkeyHash";
+  "RegistryCoordinator.getQuorumBitmapIndicesAtBlockNumber";
+  "RegistryCoordinator._getQuorumBitmapIndexAtBlockNumber";
+  "RegistryCoordinator.getCurrentQuorumBitmap";
+  "RegistryCoordinator._hashTypedDataV4";
+  "BN254.hashToG1";
+  "RegistryCoordinator.owner";
+  "OwnableUpgradeable.owner";
+  "RegistryCoordinator.<Constructor>" -> "RegistryCoordinator._disableInitializers" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.initialize" -> "RegistryCoordinator._transferOwnership" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.initialize" -> "RegistryCoordinator._initializePauser" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.initialize" -> "RegistryCoordinator._setChurnApprover" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.initialize" -> "RegistryCoordinator._setEjector" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.initialize" -> "RegistryCoordinator._createQuorum" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.registerOperator" -> "RegistryCoordinator._getOrCreateOperatorId" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.registerOperator" -> "RegistryCoordinator._registerOperator" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.registerOperatorWithChurn" -> "RegistryCoordinator._getOrCreateOperatorId" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.registerOperatorWithChurn" -> "RegistryCoordinator._verifyChurnApproverSignature" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.registerOperatorWithChurn" -> "RegistryCoordinator._registerOperator" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.registerOperatorWithChurn" -> "RegistryCoordinator._validateChurn" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.registerOperatorWithChurn" -> "RegistryCoordinator._deregisterOperator" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.deregisterOperator" -> "RegistryCoordinator._deregisterOperator" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.updateOperators" -> "RegistryCoordinator._currentOperatorBitmap" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.updateOperators" -> "BitmapUtils.bitmapToBytesArray" [ color = "white" ];
+  "RegistryCoordinator.updateOperators" -> "RegistryCoordinator._updateOperator" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.updateOperatorsForQuorum" -> "BitmapUtils.orderedBytesArrayToBitmap" [ color = "white" ];
+  "RegistryCoordinator.updateOperatorsForQuorum" -> "indexRegistry.totalOperatorsForQuorum" [ color = "white" ];
+  "RegistryCoordinator.updateOperatorsForQuorum" -> "RegistryCoordinator._currentOperatorBitmap" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.updateOperatorsForQuorum" -> "BitmapUtils.isSet" [ color = "white" ];
+  "RegistryCoordinator.updateOperatorsForQuorum" -> "RegistryCoordinator._updateOperator" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.updateOperatorsForQuorum" -> "RegistryCoordinator.QuorumBlockNumberUpdated" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.updateSocket" -> "RegistryCoordinator.OperatorSocketUpdate" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.ejectOperator" -> "RegistryCoordinator._deregisterOperator" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.createQuorum" -> "RegistryCoordinator._createQuorum" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.setOperatorSetParams" -> "RegistryCoordinator._setOperatorSetParams" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.setChurnApprover" -> "RegistryCoordinator._setChurnApprover" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.setEjector" -> "RegistryCoordinator._setEjector" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._registerOperator" -> "BitmapUtils.orderedBytesArrayToBitmap" [ color = "white" ];
+  "RegistryCoordinator._registerOperator" -> "RegistryCoordinator._currentOperatorBitmap" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._registerOperator" -> "quorumsToAdd.isEmpty" [ color = "white" ];
+  "RegistryCoordinator._registerOperator" -> "quorumsToAdd.noBitsInCommon" [ color = "white" ];
+  "RegistryCoordinator._registerOperator" -> "currentBitmap.plus" [ color = "white" ];
+  "RegistryCoordinator._registerOperator" -> "RegistryCoordinator._updateOperatorBitmap" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._registerOperator" -> "RegistryCoordinator.OperatorSocketUpdate" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._registerOperator" -> "RegistryCoordinator.OperatorInfo" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._registerOperator" -> "serviceManager.registerOperatorToAVS" [ color = "white" ];
+  "RegistryCoordinator._registerOperator" -> "RegistryCoordinator.OperatorRegistered" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._registerOperator" -> "blsApkRegistry.registerOperator" [ color = "white" ];
+  "RegistryCoordinator._registerOperator" -> "stakeRegistry.registerOperator" [ color = "white" ];
+  "RegistryCoordinator._registerOperator" -> "indexRegistry.registerOperator" [ color = "white" ];
+  "RegistryCoordinator._getOrCreateOperatorId" -> "blsApkRegistry.getOperatorId" [ color = "white" ];
+  "RegistryCoordinator._getOrCreateOperatorId" -> "blsApkRegistry.registerBLSPublicKey" [ color = "white" ];
+  "RegistryCoordinator._getOrCreateOperatorId" -> "RegistryCoordinator.pubkeyRegistrationMessageHash" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._validateChurn" -> "stakeRegistry.getCurrentStake" [ color = "white" ];
+  "RegistryCoordinator._validateChurn" -> "RegistryCoordinator._individualKickThreshold" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._validateChurn" -> "RegistryCoordinator._totalKickThreshold" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._deregisterOperator" -> "BitmapUtils.orderedBytesArrayToBitmap" [ color = "white" ];
+  "RegistryCoordinator._deregisterOperator" -> "RegistryCoordinator._currentOperatorBitmap" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._deregisterOperator" -> "quorumsToRemove.isEmpty" [ color = "white" ];
+  "RegistryCoordinator._deregisterOperator" -> "quorumsToRemove.isSubsetOf" [ color = "white" ];
+  "RegistryCoordinator._deregisterOperator" -> "currentBitmap.minus" [ color = "white" ];
+  "RegistryCoordinator._deregisterOperator" -> "RegistryCoordinator._updateOperatorBitmap" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._deregisterOperator" -> "newBitmap.isEmpty" [ color = "white" ];
+  "RegistryCoordinator._deregisterOperator" -> "serviceManager.deregisterOperatorFromAVS" [ color = "white" ];
+  "RegistryCoordinator._deregisterOperator" -> "RegistryCoordinator.OperatorDeregistered" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._deregisterOperator" -> "blsApkRegistry.deregisterOperator" [ color = "white" ];
+  "RegistryCoordinator._deregisterOperator" -> "stakeRegistry.deregisterOperator" [ color = "white" ];
+  "RegistryCoordinator._deregisterOperator" -> "indexRegistry.deregisterOperator" [ color = "white" ];
+  "RegistryCoordinator._updateOperator" -> "stakeRegistry.updateOperatorStake" [ color = "white" ];
+  "RegistryCoordinator._updateOperator" -> "quorumsToRemove.isEmpty" [ color = "white" ];
+  "RegistryCoordinator._updateOperator" -> "RegistryCoordinator._deregisterOperator" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._updateOperator" -> "BitmapUtils.bitmapToBytesArray" [ color = "white" ];
+  "RegistryCoordinator._verifyChurnApproverSignature" -> "EIP1271SignatureUtils.checkSignature_EIP1271" [ color = "white" ];
+  "RegistryCoordinator._verifyChurnApproverSignature" -> "RegistryCoordinator.calculateOperatorChurnApprovalDigestHash" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._createQuorum" -> "RegistryCoordinator._setOperatorSetParams" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._createQuorum" -> "stakeRegistry.initializeQuorum" [ color = "white" ];
+  "RegistryCoordinator._createQuorum" -> "indexRegistry.initializeQuorum" [ color = "white" ];
+  "RegistryCoordinator._createQuorum" -> "blsApkRegistry.initializeQuorum" [ color = "white" ];
+  "RegistryCoordinator._updateOperatorBitmap" -> "RegistryCoordinator.QuorumBitmapUpdate" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._updateOperatorBitmap" -> "RegistryCoordinator.QuorumBitmapUpdate" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._setOperatorSetParams" -> "RegistryCoordinator.OperatorSetParamsUpdated" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._setChurnApprover" -> "RegistryCoordinator.ChurnApproverUpdated" [ color = "#1bc6a6" ];
+  "RegistryCoordinator._setEjector" -> "RegistryCoordinator.EjectorUpdated" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.getOperatorFromId" -> "blsApkRegistry.getOperatorFromPubkeyHash" [ color = "white" ];
+  "RegistryCoordinator.getQuorumBitmapIndicesAtBlockNumber" -> "RegistryCoordinator._getQuorumBitmapIndexAtBlockNumber" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.getCurrentQuorumBitmap" -> "RegistryCoordinator._currentOperatorBitmap" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.calculateOperatorChurnApprovalDigestHash" -> "RegistryCoordinator._hashTypedDataV4" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.pubkeyRegistrationMessageHash" -> "BN254.hashToG1" [ color = "white" ];
+  "RegistryCoordinator.pubkeyRegistrationMessageHash" -> "RegistryCoordinator._hashTypedDataV4" [ color = "#1bc6a6" ];
+  "RegistryCoordinator.owner" -> "OwnableUpgradeable.owner" [ color = "white" ];
+
+
+rankdir=LR
+node [shape=plaintext]
+subgraph cluster_01 { 
+label = "Legend";
+key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td align="right" port="i1">Internal Call</td></tr>
+  <tr><td align="right" port="i2">External Call</td></tr>
+  <tr><td align="right" port="i3">Defined Contract</td></tr>
+  <tr><td align="right" port="i4">Undefined Contract</td></tr>
+  </table>>]
+key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td port="i1">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i2">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i3" bgcolor="#445773">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i4">
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="7" color="#e8726d">
+      <tr>
+       <td></td>
+      </tr>
+     </table>
+  </td></tr>
+  </table>>]
+key:i1:e -> key2:i1:w [color="#1bc6a6"]
+key:i2:e -> key2:i2:w [color="white"]
+}
+}
